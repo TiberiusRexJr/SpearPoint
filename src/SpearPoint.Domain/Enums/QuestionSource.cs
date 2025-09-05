@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace SpearPoint.Domain.Enums
 {
-    internal class QuestionSource
-    {
-    }
+    public enum QuestionSource { Human, OpenAI }
 }

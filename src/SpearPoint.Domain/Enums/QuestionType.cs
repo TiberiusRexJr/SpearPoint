@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace SpearPoint.Domain.Enums
 {
-    internal class QuestionType
-    {
-    }
+    public enum QuestionType { MCQ, FR, TF }
 }

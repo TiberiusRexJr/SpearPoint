@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,8 +25,7 @@ app.UseHttpsRedirection();
 // If/when you add auth later
 // app.UseAuthentication();
 // app.UseAuthorization();
-
+AddInfrastructure(Configuration)
 app.MapControllers();
 app.MapHealthChecks("/healthz");
-
 app.Run();
