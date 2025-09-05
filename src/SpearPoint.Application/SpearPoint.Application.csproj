@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SpearPoint.Domain\SpearPoint.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
