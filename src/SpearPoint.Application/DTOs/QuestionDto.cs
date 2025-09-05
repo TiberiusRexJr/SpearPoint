@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace SpearPoint.Application.DTOs
 {
-    internal class QuestionDto
-    {
-    }
+    public record QuestionDto(
+    long Id,
+    string Section,
+    string Type,
+    string Stem,
+    int Difficulty,
+    string Source,
+    string Status,
+    IReadOnlyList<string> Tags,
+    string? AnswerExplanation,
+    IEnumerable<(string Label, string Text, bool IsCorrect)> Choices);
 }

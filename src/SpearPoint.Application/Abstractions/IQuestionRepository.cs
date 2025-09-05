@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SpearPoint.Domain.Entities;
 
 namespace SpearPoint.Application.Abstractions
 {
-    internal interface IQuestionRepository
+    public interface IQuestionRepository
     {
+        Task<Question> AddAsync(Question entity, CancellationToken ct = default);
+        Task<Question?> GetAsync(long id, CancellationToken ct = default);
+        Task<Question?> FindByDedupeHashAsync(string dedupeHash, CancellationToken ct = default);
+        Task<IReadOnlyList<Question>> ListAsync(string? section = null, int? difficulty = null, CancellationToken ct = default);
     }
 }
