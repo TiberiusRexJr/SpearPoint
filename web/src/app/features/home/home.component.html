@@ -1,0 +1,9 @@
+<h1>Welcome to SpearPoint</h1>
+<p>Split deploy demo is live.</p>
+<button (click)="ping()">Ping API /healthz</button>
+<p *ngIf="health as h">API says: {{ h }}</p>
+<nav>
+  <a routerLink="/">Home</a> |
+  <a routerLink="/practice">Practice</a> |
+  <a routerLink="/results">Results</a>
+</nav>

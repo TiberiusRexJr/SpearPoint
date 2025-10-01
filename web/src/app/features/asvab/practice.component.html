@@ -1,0 +1,9 @@
+<h2>ASVAB Practice (demo)</h2>
+<ul>
+  <li *ngFor="let q of questions">
+    <strong>{{q.text}}</strong>
+    <ol>
+      <li *ngFor="let c of q.choices">{{c}}</li>
+    </ol>
+  </li>
+</ul>

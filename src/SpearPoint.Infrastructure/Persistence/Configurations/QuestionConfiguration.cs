@@ -39,8 +39,7 @@ public class QuestionConfiguration : IEntityTypeConfiguration<Question>
         // Tags as JSON text + basic integrity guard
         b.Property(x => x.Tags)
         .HasConversion(new StringListToJsonConverter())
-        .HasColumnType("nvarchar(max)")
-        .HasDefaultValue("[]");
+        .HasColumnType("nvarchar(max)");
         b.ToTable(t => t.HasCheckConstraint("CK_questions_tags_json", "ISJSON([Tags]) = 1"));
 
         // Dedupe hash (hex) — unique if present

@@ -3,6 +3,22 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# --- Angular / Node ---
+web/node_modules/
+web/dist/
+web/.angular/
+web/.cache/
+web/.vite/
+web/coverage/
+web/*.log
+web/npm-debug.log*
+web/yarn-error.log*
+web/pnpm-debug.log*
+web/.env
+web/.env.*.local
+web/.DS_Store
+web/Thumbs.db
+
 # User-specific files
 *.rsuser
 *.suo
@@ -73,6 +89,18 @@ BenchmarkDotNet.Artifacts/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+
+# --- .NET ---
+**/bin/
+**/obj/
+**/TestResults/
+*.user
+*.suo
+*.rsuser
+*.vsp
+*.vspx
+*.psess
+*.pidb
 
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
@@ -426,3 +454,6 @@ dotnet_style_qualification_for_property = true:suggestion
 dotnet_style_qualification_for_method = true:suggestion
 dotnet_style_qualification_for_event = true:suggestion
 csharp_prefer_braces = when_multiline:suggestion
+/web/.vscode/launch.json
+*.json
+/web/.vscode
