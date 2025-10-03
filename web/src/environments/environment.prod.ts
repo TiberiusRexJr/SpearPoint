@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  apiBase: 'https://api.<your-domain>/api'
+  apiBaseUrl: '/api',
+  useMockApi: false,
+  feature: { review: true, openai: false }
 };

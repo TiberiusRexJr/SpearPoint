@@ -1,4 +1,6 @@
 export const environment = {
   production: false,
-  apiBase: '/api'
+  apiBaseUrl: '/api',
+  useMockApi: false,     // <— added; default false means NO behavior change
+  feature: { review: false, openai: false }
 };
