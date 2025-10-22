@@ -11,7 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpearPoint.Application", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpearPoint.Infrastructure", "src\SpearPoint.Infrastructure\SpearPoint.Infrastructure.csproj", "{11DF0280-ED29-196B-A2BF-933BA70F587C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpearPoint.Tests", "tests\SpearPoint.Tests\SpearPoint.Tests.csproj", "{1D826148-9A96-5A85-3BBE-D1920C503677}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpearPoint.Contracts", "src\SpearPoint.Contracts\SpearPoint.Contracts.csproj", "{6C856768-5102-410B-BE68-5B6B432CFC58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpearPoint.ContractTests", "tests\SpearPoint.ContractTests\SpearPoint.ContractTests.csproj", "{B22E0FEC-007C-F0EA-F1BB-EC1C6AB1616A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpearPoint.IntegrationsTests", "tests\SpearPoint.IntegrationsTests\SpearPoint.IntegrationsTests.csproj", "{6B5466A6-D165-2893-803B-1A5051B94E68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpearPoint.UnitTests", "tests\SpearPoint.UnitTests\SpearPoint.UnitTests.csproj", "{6A7F7B01-3AC3-06FF-002B-16BFB518E14E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,13 +43,30 @@ Global
 		{11DF0280-ED29-196B-A2BF-933BA70F587C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11DF0280-ED29-196B-A2BF-933BA70F587C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11DF0280-ED29-196B-A2BF-933BA70F587C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D826148-9A96-5A85-3BBE-D1920C503677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D826148-9A96-5A85-3BBE-D1920C503677}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D826148-9A96-5A85-3BBE-D1920C503677}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D826148-9A96-5A85-3BBE-D1920C503677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C856768-5102-410B-BE68-5B6B432CFC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C856768-5102-410B-BE68-5B6B432CFC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C856768-5102-410B-BE68-5B6B432CFC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C856768-5102-410B-BE68-5B6B432CFC58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B22E0FEC-007C-F0EA-F1BB-EC1C6AB1616A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B22E0FEC-007C-F0EA-F1BB-EC1C6AB1616A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B22E0FEC-007C-F0EA-F1BB-EC1C6AB1616A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B22E0FEC-007C-F0EA-F1BB-EC1C6AB1616A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B5466A6-D165-2893-803B-1A5051B94E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B5466A6-D165-2893-803B-1A5051B94E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B5466A6-D165-2893-803B-1A5051B94E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B5466A6-D165-2893-803B-1A5051B94E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A7F7B01-3AC3-06FF-002B-16BFB518E14E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7F7B01-3AC3-06FF-002B-16BFB518E14E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7F7B01-3AC3-06FF-002B-16BFB518E14E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7F7B01-3AC3-06FF-002B-16BFB518E14E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B22E0FEC-007C-F0EA-F1BB-EC1C6AB1616A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6B5466A6-D165-2893-803B-1A5051B94E68} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6A7F7B01-3AC3-06FF-002B-16BFB518E14E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {883C6F16-C7B2-4823-835F-71FECD93ACA8}

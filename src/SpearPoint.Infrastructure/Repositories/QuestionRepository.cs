@@ -7,31 +7,61 @@ namespace SpearPoint.Infrastructure.Repositories;
 
 public class QuestionRepository : IQuestionRepository
 {
-    private readonly AppDbContext _db;
-    public QuestionRepository(AppDbContext db) => _db = db;
+    private readonly AppDbContext _context;
 
-    public async Task<Question> AddAsync(Question entity, CancellationToken ct = default)
+    public QuestionRepository(AppDbContext context)
     {
-        _db.Questions.Add(entity);
-        await _db.SaveChangesAsync(ct);
-        return entity;
+        _context = context;
     }
 
-    public Task<Question?> GetAsync(long id, CancellationToken ct = default) =>
-    _db.Questions.Include(q => q.Choices).FirstOrDefaultAsync(q => q.Id == id, ct);
-
-    public Task<Question?> FindByDedupeHashAsync(string dedupeHash, CancellationToken ct = default) =>
-    _db.Questions.AsNoTracking().FirstOrDefaultAsync(q => q.DedupeHash == dedupeHash, ct);
-
-    public async Task<IReadOnlyList<Question>> ListAsync(string? section = null, int? difficulty = null, CancellationToken ct = default)
+    public async Task<Question> AddAsync(Question question, CancellationToken cancellationToken = default)
     {
-        var q = _db.Questions.AsNoTracking().Include(x => x.Choices).AsQueryable();
-        if (!string.IsNullOrWhiteSpace(section)) q = q.Where(x => x.Section == section);
-        if (difficulty.HasValue) q = q.Where(x => x.Difficulty == difficulty);
-        return await q.OrderBy(x => x.Section).ThenBy(x => x.Difficulty).ToListAsync(ct);
+        _context.Questions.Add(question);
+        await _context.SaveChangesAsync(cancellationToken);
+        return question;
     }
 
+    public Task<Question?> GetAsync(long id, CancellationToken cancellationToken = default)
+    {
+        return _context.Questions
+            .Include(question => question.Choices)
+            .FirstOrDefaultAsync(question => question.Id == id, cancellationToken);
+    }
 
+    public Task<Question?> FindByDedupeHashAsync(string dedupHash, CancellationToken cancellationToken = default)
+    {
+        return _context.Questions
+            .AsNoTracking()
+            .FirstOrDefaultAsync(question => question.DedupeHash == dedupHash, cancellationToken);
+    }
 
+    public async Task<IReadOnlyList<Question>> ListAsync(
+            Section? section = null,
+            int? difficulty = null,
+            CancellationToken cancellationToken = default)
+    {
+        IQueryable<Question> query = _context.Questions
+            .AsNoTracking()
+            .Include(question => question.Choices)
+            .AsQueryable();
 
+        if (section.HasValue)
+        {
+            query = query.Where(question => question.Section == section);
+        }
+
+        if (difficulty.HasValue)
+        {
+            query = query.Where(question => question.Difficulty == difficulty);
+        }
+
+        return await query
+            .OrderBy(question => question.Section)
+            .ThenBy(question => question.Difficulty)
+            .ToListAsync(cancellationToken);
+    }
 }
+
+
+
+

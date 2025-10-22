@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace SpearPoint.Domain.Entities
 {
+    public enum Section { ArithmeticReasoning, WordKnowledge, ParagraphComprehension, MathematicsKnowledge, Electronics, Mechanical }
     public class Question
     {
         public long Id { get; set; }
         // e.g., "Arithmetic Reasoning", "Electronics"
-        public string Section { get; set; } = string.Empty;
+        public Section Section { get; set; } 
         public QuestionType Type { get; set; } = QuestionType.MCQ;
         // Stem and optional rationale/explanation
         public string Stem { get; set; } = string.Empty;

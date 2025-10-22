@@ -12,6 +12,6 @@ namespace SpearPoint.Application.Abstractions
         Task<Question> AddAsync(Question entity, CancellationToken ct = default);
         Task<Question?> GetAsync(long id, CancellationToken ct = default);
         Task<Question?> FindByDedupeHashAsync(string dedupeHash, CancellationToken ct = default);
-        Task<IReadOnlyList<Question>> ListAsync(string? section = null, int? difficulty = null, CancellationToken ct = default);
+        Task<IReadOnlyList<Question>> ListAsync(Section? section = null, int? difficulty = null, CancellationToken ct = default);
     }
 }

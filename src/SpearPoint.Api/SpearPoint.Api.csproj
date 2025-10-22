@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SpearPoint.Application\SpearPoint.Application.csproj" />
+    <ProjectReference Include="..\SpearPoint.Contracts\SpearPoint.Contracts.csproj" />
+    <ProjectReference Include="..\SpearPoint.Domain\SpearPoint.Domain.csproj" />
     <ProjectReference Include="..\SpearPoint.Infrastructure\SpearPoint.Infrastructure.csproj" />
   </ItemGroup>
 
